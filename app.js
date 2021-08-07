@@ -2,10 +2,10 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const app = express();
 
-app.set('view engine', 'pug');
+
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const adminData = require('./routes/admin');
@@ -19,7 +19,7 @@ app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    res.render("404");
+    res.render("404",{title:'page not found',path:''});
 });
 
 app.listen(3000);
