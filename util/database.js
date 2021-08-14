@@ -7,7 +7,7 @@ let _db;
 
 const MongoConnect = callback => {
   MongoClient.connect(
-    'mongodb+srv://tushar:Readyformongodb@cluster0.4aisa.mongodb.net/shop?retryWrites=true&w=majority'
+    'mongodb+srv://tushar:<password>@cluster0.4aisa.mongodb.net/shop?retryWrites=true&w=majority'
   )
     .then(client => {
       console.log('Connected!');
